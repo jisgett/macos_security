@@ -1,9 +1,11 @@
-title: "macOS 13.0: Security Configuration - CIS Controls Version 8"
+title: "macOS 14.0: Security Configuration - CIS Controls Version 8"
 description: |
-  This guide describes the actions to take when securing a macOS 13.0 system against the CIS Controls version 8 baseline.
+  This guide describes the actions to take when securing a macOS 14.0 system against the CIS Controls Version 8 security baseline.
 
   Information System Security Officers and benchmark creators can use this catalog of settings in order to assist them in security benchmark creation. This list is a catalog, not a checklist or benchmark, and satisfaction of every item is not likely to be possible or sensible in many operational scenarios.
 authors: |
+  *macOS Security Compliance Project*
+
   CIS Critical Security Controls® (CIS Controls®) are referenced with the permission and support of the Center for Internet Security® (CIS®)
   |===
   |Edward Byrd|Center for Internet Security
@@ -51,6 +53,7 @@ profile:
       - icloud_bookmarks_disable
       - icloud_calendar_disable
       - icloud_drive_disable
+      - icloud_freeform_disable
       - icloud_game_center_disable
       - icloud_keychain_disable
       - icloud_mail_disable
@@ -60,34 +63,33 @@ profile:
       - icloud_sync_disable
   - section: "macos"
     rules:
+      - os_account_modification_disable
       - os_airdrop_disable
+      - os_anti_virus_installed
       - os_appleid_prompt_disable
       - os_authenticated_root_enable
       - os_bonjour_disable
-      - os_calendar_app_disable
       - os_config_data_install_enforce
       - os_directory_services_configured
-      - os_efi_integrity_validated
       - os_ess_installed
-      - os_facetime_app_disable
       - os_filevault_autologin_disable
       - os_firewall_log_enable
       - os_gatekeeper_enable
       - os_gatekeeper_rearm
       - os_handoff_disable
+      - os_hibernate_mode_apple_silicon_enable
       - os_hibernate_mode_destroyfvkeyonstandby_enable
-      - os_hibernate_mode_enable
+      - os_hibernate_mode_intel_enable
+      - os_home_folders_secure
       - os_httpd_disable
       - os_icloud_storage_prompt_disable
       - os_install_log_retention_configure
       - os_ir_support_disable
       - os_library_validation_enabled
-      - os_mail_app_disable
       - os_mdm_require
-      - os_messages_app_disable
       - os_mobile_file_integrity_enable
       - os_nfsd_disable
-      - os_parental_controls_enable
+      - os_on_device_dictation_enforce
       - os_password_autofill_disable
       - os_password_hint_remove
       - os_password_proximity_disable
@@ -96,9 +98,12 @@ profile:
       - os_privacy_setup_prompt_disable
       - os_root_disable
       - os_safari_advertising_privacy_protection_enable
+      - os_safari_javascript_enabled
       - os_safari_open_safe_downloads_disable
+      - os_safari_popups_disabled
       - os_safari_prevent_cross-site_tracking_enable
       - os_safari_show_full_website_address_enable
+      - os_safari_show_status_bar_enabled
       - os_safari_warn_fraudulent_website_enable
       - os_show_filename_extensions_enable
       - os_sip_enable
@@ -122,14 +127,13 @@ profile:
       - pwpolicy_account_lockout_enforce
       - pwpolicy_account_lockout_timeout_enforce
       - pwpolicy_alpha_numeric_enforce
+      - pwpolicy_custom_regex_enforce
       - pwpolicy_history_enforce
-      - pwpolicy_lower_case_character_enforce
       - pwpolicy_max_lifetime_enforce
       - pwpolicy_minimum_length_enforce
       - pwpolicy_minimum_lifetime_enforce
       - pwpolicy_simple_sequence_disable
       - pwpolicy_special_character_enforce
-      - pwpolicy_upper_case_character_enforce
   - section: "systemsettings"
     rules:
       - system_settings_airplay_receiver_disable
@@ -198,8 +202,6 @@ profile:
       - os_access_control_mobile_devices
   - section: "Supplemental"
     rules:
-      - supplemental_cis_manual
-      - supplemental_controls
       - supplemental_filevault
       - supplemental_firewall_pf
       - supplemental_password_policy

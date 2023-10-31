@@ -13,19 +13,21 @@ fix: |
   This is implemented by a Configuration Profile.
 references:
   cce:
-    - CCE-91770-8
-  cci: 
-    - N/A
+    - CCE-92772-3
+  cci:
+    - CCI-000381
+    - CCI-001774
   800-53r5:
     - N/A
   800-53r4:
     - N/A
   srg:
-    - N/A
+    - SRG-OS-000095-GPOS-00049
+    - SRG-OS-000370-GPOS-00155
   disa_stig:
     - N/A
 macOS:
-  - "13.0"
+  - "14.0"
 tags:
   - none
 severity: "medium"

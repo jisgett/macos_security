@@ -15,18 +15,18 @@ fix: |
   This is implemented by a Configuration Profile.
 references:
   cce:
-    - CCE-91855-7
+    - CCE-92860-6
   cci:
-    - N/A
+    - CCI-000381
   800-53r5:
     - CM-7
     - CM-7(1)
-  800-53r4: 
+  800-53r4:
     - CM-7
     - CM-7(1)
   srg:
-    - N/A
-  disa_stig: 
+    - SRG-OS-000095-GPOS-00049
+  disa_stig:
     - N/A
   cis:
     benchmark:
@@ -34,10 +34,17 @@ references:
     controls v8:
       - 4.1
       - 4.8
+  cmmc:
+    - CM.L2-3.4.6
+    - CM.L2-3.4.7
 macOS:
-  - "13.0"
+  - "14.0"
 tags:
   - cisv8
+  - cnssi-1253_moderate
+  - cnssi-1253_low
+  - cnssi-1253_high
+  - cmmc_lvl2
 severity: "medium"
 mobileconfig: true
 mobileconfig_info:
